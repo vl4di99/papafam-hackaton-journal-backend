@@ -33,7 +33,7 @@ mongoData.once("open", function () {
 
 app.use(require("./routes/routes"));
 
-app.get("/", (request, response, next) => {
-  response.json({ message: "Hey! This is your server response!" });
-  next();
+app.get("/", (req, res) => {
+  res.json({ message: "Hey! This is your server response!" });
+  console.log("Deployed!");
 });
