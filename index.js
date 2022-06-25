@@ -35,5 +35,4 @@ app.use(require("./routes/routes"));
 
 app.get("/", (req, res) => {
   res.json({ message: "Hey! This is your server response!" });
-  console.log("Deployed!");
 });
