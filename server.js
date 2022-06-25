@@ -9,22 +9,12 @@ const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 5000;
 const app = express();
 
+app.listen(PORT, function () {
+  console.log("Backend listening on port", PORT);
+});
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// Global error handling
-app.use(function (err, req, res) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
-  );
-  next();
-});
 
 // perform a database connection when the server starts
 mongoose.connect(
