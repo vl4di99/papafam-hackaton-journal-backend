@@ -34,5 +34,9 @@ mongoData.once("open", function () {
 app.use(require("./routes/routes"));
 
 app.get("/", (req, res) => {
-  res.json({ message: "Hey! This is your server response!" });
+  app._router.stack.forEach(function (r) {
+    if (r.route && r.route.path) {
+      console.log(r.route.path);
+    }
+  });
 });
