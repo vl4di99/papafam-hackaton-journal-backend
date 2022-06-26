@@ -15,6 +15,7 @@ app.listen(PORT, function () {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
 // perform a database connection when the server starts
 mongoose.connect(
