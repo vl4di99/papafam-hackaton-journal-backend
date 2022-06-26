@@ -12,6 +12,7 @@ const JournalSchema = new Schema({
       dropDups: true,
     },
   },
+  date: Date,
 });
 
 // Compile model from schema
